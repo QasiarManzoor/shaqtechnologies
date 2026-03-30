@@ -8,5 +8,15 @@
   },
   "observability": {
     "enabled": true
-  }
+  },
+  "routes": [
+    {
+      "pattern": "shaqtechnologies.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.shaqtechnologies.com",
+      "custom_domain": true
+    }
+  ]
 }
