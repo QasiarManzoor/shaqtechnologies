@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white font-sans antialiased text-brand-navy transition-colors duration-500;
+  background-image:
+    radial-gradient(circle at top left, rgba(0, 200, 255, 0.08), transparent 28%),
+    radial-gradient(circle at 86% 12%, rgba(30, 136, 229, 0.1), transparent 24%);
+}
+
+.dark body {
+  color-scheme: dark;
+  @apply bg-navy text-white;
+  background-image:
+    radial-gradient(circle at top left, rgba(0, 200, 255, 0.14), transparent 28%),
+    radial-gradient(circle at 86% 12%, rgba(30, 136, 229, 0.16), transparent 24%);
+}
+
+#root {
+  @apply min-h-screen;
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
+  }
+
+  .glass-panel {
+    @apply rounded-[2rem] border border-slate-200/80 bg-white shadow-soft backdrop-blur-xl transition-all duration-500 dark:border-white/10 dark:bg-white/5 dark:shadow-glow;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-brand-blue to-brand-cyan px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition duration-300 hover:-translate-y-0.5 hover:shadow-sky-500/35;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center rounded-2xl border border-brand-blue/40 bg-white px-6 py-3 text-sm font-semibold text-brand-blue transition duration-300 hover:-translate-y-0.5 hover:border-brand-blue hover:text-brand-navy dark:border-white/20 dark:bg-white/5 dark:text-white dark:hover:border-brand-cyan;
+  }
+
+  .cta-button {
+    @apply inline-flex items-center justify-center rounded-2xl bg-brand-cyan px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/20 transition duration-300 hover:-translate-y-0.5 hover:shadow-cyan-500/35;
+  }
+
+  .section-title {
+    @apply text-3xl font-extrabold tracking-tight text-brand-navy dark:text-white md:text-4xl;
+  }
+
+  .section-copy {
+    @apply max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300;
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-[0.26em] text-brand-blue dark:text-brand-cyan;
+  }
+}
+
