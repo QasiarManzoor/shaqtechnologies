@@ -14,7 +14,7 @@ const badges = ['AI Automation', 'Enterprise SaaS', 'Cloud Native'];
 
 function Hero() {
   return (
-    <section id="home" className="container-shell relative py-16 md:py-24">
+    <section id="home" className="container-shell relative pb-16 pt-8 md:pb-24 md:pt-12">
       <div className="grid items-center gap-16 lg:grid-cols-[1.02fr_0.98fr]">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
@@ -196,4 +196,5 @@ function Hero() {
 }
 
 export default Hero;
+
 
