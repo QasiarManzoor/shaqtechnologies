@@ -22,11 +22,11 @@ function Hero() {
           transition={{ duration: 0.7 }}
           className="max-w-2xl"
         >
-          <div className="mb-6 flex flex-wrap gap-3">
+          <div className="mb-6 flex flex-wrap gap-2.5">
             {badges.map((badge) => (
               <span
                 key={badge}
-                className="rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-700 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-200"
+                className="rounded-full border border-cyan-200 bg-cyan-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-cyan-700 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-200"
               >
                 {badge}
               </span>
@@ -196,3 +196,4 @@ function Hero() {
 }
 
 export default Hero;
+
