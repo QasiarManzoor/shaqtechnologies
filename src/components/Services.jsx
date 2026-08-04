@@ -1,32 +1,7 @@
 import { motion } from 'framer-motion';
-import { CloudCog, LayoutDashboard, Layers3, Workflow } from 'lucide-react';
-
-const services = [
-  {
-    title: 'AI Solutions',
-    description:
-      'Intelligent copilots, automations, and decision systems designed to help businesses move faster with confidence.',
-    icon: Workflow,
-  },
-  {
-    title: 'SaaS Development',
-    description:
-      'Scalable multi-tenant products with modern architecture, smooth user journeys, and strong platform foundations.',
-    icon: Layers3,
-  },
-  {
-    title: 'CRM / ERP Systems',
-    description:
-      'Connected business software that brings customers, operations, finance, and reporting into one streamlined flow.',
-    icon: LayoutDashboard,
-  },
-  {
-    title: 'Cloud Platforms',
-    description:
-      'Cloud-native infrastructure and deployment systems built for reliability, security, and long-term growth.',
-    icon: CloudCog,
-  },
-];
+import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { services } from '../data/services';
 
 function Services() {
   return (
@@ -65,8 +40,9 @@ function Services() {
                 {service.title}
               </h3>
               <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
-                {service.description}
+                {service.shortDescription}
               </p>
+              <Link to={`/services/${service.slug}`} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-blue transition hover:text-brand-navy dark:hover:text-brand-cyan">Explore service <ArrowUpRight size={16} /></Link>
             </motion.article>
           );
         })}

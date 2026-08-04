@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import About from './components/About';
-import CTA from './components/CTA';
-import Footer from './components/Footer';
-import Hero from './components/Hero';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import Footer from './components/SiteFooter';
 import Navbar from './components/Navbar';
-import Services from './components/Services';
+import ContactPage from './pages/ContactPage';
+import HomePage from './pages/HomePage';
+import NotFoundPage from './pages/NotFoundPage';
+import ServicePage from './pages/ServicePage';
 
 const getInitialTheme = () => {
   if (typeof window === 'undefined') {
@@ -21,12 +22,22 @@ const getInitialTheme = () => {
 
 function App() {
   const [theme, setTheme] = useState(getInitialTheme);
+  const location = useLocation();
 
   useEffect(() => {
     const root = document.documentElement;
     root.classList.toggle('dark', theme === 'dark');
     window.localStorage.setItem('shaq-theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    const hash = location.hash.slice(1);
+    if (hash) {
+      requestAnimationFrame(() => document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' }));
+    } else {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+  }, [location.pathname, location.hash]);
 
   return (
     <div className="relative overflow-hidden">
@@ -37,10 +48,13 @@ function App() {
       <Navbar theme={theme} setTheme={setTheme} />
 
       <main>
-        <Hero />
-        <Services />
-        <About />
-        <CTA />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services/:slug" element={<ServicePage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/not-found" element={<NotFoundPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
       </main>
       <Footer />
     </div>

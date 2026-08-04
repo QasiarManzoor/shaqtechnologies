@@ -1,14 +1,15 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, UserRound, X } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 
 const navItems = [
-  { label: 'Home', href: '#home' },
-  { label: 'Services', href: '#services' },
-  { label: 'Products', href: '#services' },
-  { label: 'About', href: '#about' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Products', href: '/#services' },
+  { label: 'About', href: '/#about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 function Navbar({ theme, setTheme }) {
@@ -17,7 +18,7 @@ function Navbar({ theme, setTheme }) {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/82 backdrop-blur-xl transition-colors duration-500 dark:border-white/10 dark:bg-navy/80">
       <nav className="container-shell flex items-center justify-between py-4">
-        <a href="#home" className="flex items-center gap-3 md:gap-4">
+        <Link to="/" className="flex items-center gap-3 md:gap-4">
           <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-1 shadow-lg shadow-slate-200/60 dark:border-white/10 dark:bg-white/10 dark:shadow-cyan-500/10 md:h-14 md:w-14">
             <img
               src="/shaq-logo.png"
@@ -33,31 +34,31 @@ function Navbar({ theme, setTheme }) {
               One Platform. Unlimited Possibilities.
             </p>
           </div>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-8 lg:flex">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
-              href={item.href}
+              to={item.href}
               className="text-sm font-medium text-slate-600 transition hover:text-brand-navy dark:text-slate-300 dark:hover:text-white"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center gap-2 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:text-brand-navy dark:text-slate-300 dark:hover:text-white"
           >
             <UserRound size={16} />
             Login
-          </a>
-          <a href="#contact" className="primary-button">
+          </Link>
+          <Link to="/contact" className="primary-button">
             Get Started
-          </a>
+          </Link>
           <ThemeToggle theme={theme} setTheme={setTheme} />
         </div>
 
@@ -84,26 +85,26 @@ function Navbar({ theme, setTheme }) {
           >
             <div className="container-shell flex flex-col gap-4 py-5">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
+                  to={item.href}
                   onClick={() => setMenuOpen(false)}
                   className="text-sm font-medium text-slate-700 dark:text-slate-200"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 onClick={() => setMenuOpen(false)}
                 className="inline-flex items-center gap-2 rounded-2xl px-1 py-2 text-sm font-medium text-slate-700 dark:text-slate-200"
               >
                 <UserRound size={16} />
                 Login
-              </a>
-              <a href="#contact" className="primary-button w-full" onClick={() => setMenuOpen(false)}>
+              </Link>
+              <Link to="/contact" className="primary-button w-full" onClick={() => setMenuOpen(false)}>
                 Get Started
-              </a>
+              </Link>
             </div>
           </motion.div>
         ) : null}

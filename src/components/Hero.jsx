@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   Bot,
@@ -43,10 +44,10 @@ function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <a href="#contact" className="primary-button gap-2">
+            <Link to="/contact" className="primary-button gap-2">
               Get Started
               <ArrowRight size={18} />
-            </a>
+            </Link>
             <a href="#services" className="secondary-button">
               Our Services
             </a>

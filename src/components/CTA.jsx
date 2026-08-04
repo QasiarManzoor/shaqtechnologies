@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Mail, MessageSquareMore, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 function CTA() {
   return (
@@ -34,7 +35,7 @@ function CTA() {
                 contact@shaqtechnologies.com
               </a>
               <a
-                href="https://wa.me/923028913283"
+                href="https://wa.me/923028913283?text=I'm%20interested%20in%20your%20services"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 transition hover:text-brand-blue"
@@ -46,10 +47,10 @@ function CTA() {
           </div>
 
           <div className="flex flex-col gap-4 sm:flex-row">
-            <a href="#contact" className="primary-button gap-2">
+            <Link to="/contact" className="primary-button gap-2">
               Start Project
               <ArrowRight size={18} />
-            </a>
+            </Link>
             <a href="mailto:contact@shaqtechnologies.com" className="secondary-button gap-2">
               <MessageSquareMore size={18} />
               Contact Us

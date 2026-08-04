@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const highlights = [
   'Scalable SaaS and cloud platforms',
@@ -51,13 +52,13 @@ function About() {
             ))}
           </div>
 
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-blue transition hover:text-brand-navy dark:hover:text-brand-cyan"
           >
             Start your next platform
             <ArrowUpRight size={16} />
-          </a>
+          </Link>
         </div>
       </motion.div>
     </section>
