@@ -15,8 +15,8 @@ function Services() {
         <p className="eyebrow">Services</p>
         <h2 className="section-title mt-4 max-w-2xl">Solutions built with clarity, scale, and precision.</h2>
         <p className="section-copy mt-4">
-          We create modern software platforms that combine strong engineering with clean product
-          design, helping teams launch faster and operate with more confidence.
+          From secure AI and cloud platforms to custom web, mobile, and organic growth programs,
+          we help ambitious teams launch faster and operate with confidence.
         </p>
       </motion.div>
 

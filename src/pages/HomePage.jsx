@@ -13,7 +13,7 @@ const homeSchema = {
 };
 
 function HomePage() {
-  return <><Seo title="ShaQ Technologies | AI, SaaS, CRM, ERP & Cloud Solutions" description="ShaQ Technologies builds scalable AI solutions, SaaS applications, CRM and ERP systems, and reliable cloud platforms." schema={homeSchema} /><Hero /><Services /><About /><CTA /></>;
+  return <><Seo title="ShaQ Technologies | AI, SaaS, Web, Mobile & Cloud Solutions" description="ShaQ Technologies builds AI solutions, SaaS products, CRM and ERP systems, cloud platforms, custom websites, Android apps, digital marketing campaigns, and AI chatbots." schema={homeSchema} /><Hero /><Services /><About /><CTA /></>;
 }
 
 export default HomePage;

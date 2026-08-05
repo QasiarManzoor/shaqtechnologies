@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Footer from './components/SiteFooter';
 import Navbar from './components/Navbar';
@@ -23,6 +23,7 @@ const getInitialTheme = () => {
 function App() {
   const [theme, setTheme] = useState(getInitialTheme);
   const location = useLocation();
+  const initialPageViewSent = useRef(false);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -38,6 +39,18 @@ function App() {
       window.scrollTo({ top: 0, behavior: 'auto' });
     }
   }, [location.pathname, location.hash]);
+
+  useEffect(() => {
+    if (!initialPageViewSent.current) {
+      initialPageViewSent.current = true;
+      return;
+    }
+
+    window.gtag?.('event', 'page_view', {
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [location.pathname, location.search]);
 
   return (
     <div className="relative overflow-hidden">
