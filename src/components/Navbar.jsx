@@ -16,24 +16,26 @@ function Navbar({ theme, setTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/82 backdrop-blur-xl transition-colors duration-500 dark:border-white/10 dark:bg-navy/80">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-navy/95 backdrop-blur-xl">
       <nav className="container-shell flex items-center justify-between py-4">
-        <Link to="/" className="flex items-center gap-3 md:gap-4">
-          <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-1 shadow-lg shadow-slate-200/60 dark:border-white/10 dark:bg-white/10 dark:shadow-cyan-500/10 md:h-14 md:w-14">
-            <img
-              src="/shaq-logo.png"
-              alt="ShaQTechnologies logo"
-              className="h-full w-full rounded-xl object-contain"
-            />
-          </div>
-          <div>
-            <p className="text-lg font-extrabold tracking-tight text-brand-navy dark:text-white md:text-[1.8rem]">
-              ShaQTechnologies
-            </p>
-            <p className="text-xs font-medium tracking-tight text-slate-600 dark:text-slate-300 md:text-sm">
-              One Platform. Unlimited Possibilities.
-            </p>
-          </div>
+        <Link
+          to="/"
+          aria-label="ShaQTechnologies home"
+          className="inline-flex shrink-0 items-center gap-2 leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy sm:gap-2.5"
+        >
+          <img
+            src="/shaq-logo-web-safe-transparent.png"
+            alt="ShaQTechnologies"
+            width="60"
+            height="40"
+            className="block h-9 w-[54px] shrink-0 object-contain sm:h-10 sm:w-[60px]"
+          />
+          <span
+            aria-hidden="true"
+            className="hidden whitespace-nowrap text-lg font-extrabold tracking-tight text-white min-[380px]:block sm:text-xl md:text-[1.35rem]"
+          >
+            ShaQTechnologies
+          </span>
         </Link>
 
         <div className="hidden items-center gap-8 lg:flex">
@@ -41,7 +43,7 @@ function Navbar({ theme, setTheme }) {
             <Link
               key={item.label}
               to={item.href}
-              className="text-sm font-medium text-slate-600 transition hover:text-brand-navy dark:text-slate-300 dark:hover:text-white"
+              className="text-sm font-medium text-slate-300 transition hover:text-white"
             >
               {item.label}
             </Link>
@@ -51,7 +53,7 @@ function Navbar({ theme, setTheme }) {
         <div className="hidden items-center gap-3 lg:flex">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 rounded-2xl px-4 py-3 text-sm font-medium text-slate-600 transition hover:text-brand-navy dark:text-slate-300 dark:hover:text-white"
+            className="inline-flex items-center gap-2 rounded-2xl px-4 py-3 text-sm font-medium text-slate-300 transition hover:text-white"
           >
             <UserRound size={16} />
             Login
@@ -68,7 +70,7 @@ function Navbar({ theme, setTheme }) {
             type="button"
             aria-label="Toggle menu"
             onClick={() => setMenuOpen((open) => !open)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white/85 text-slate-700 shadow-lg shadow-slate-200/60 transition-colors dark:border-white/10 dark:bg-white/5 dark:text-slate-100"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-slate-100 transition-colors hover:bg-white/10"
           >
             {menuOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -81,7 +83,7 @@ function Navbar({ theme, setTheme }) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="border-t border-slate-200/70 bg-white/94 lg:hidden dark:border-white/10 dark:bg-slate-950/90"
+            className="border-t border-white/10 bg-brand-navy/95 lg:hidden"
           >
             <div className="container-shell flex flex-col gap-4 py-5">
               {navItems.map((item) => (
@@ -89,7 +91,7 @@ function Navbar({ theme, setTheme }) {
                   key={item.label}
                   to={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-sm font-medium text-slate-700 dark:text-slate-200"
+                  className="text-sm font-medium text-slate-200 transition hover:text-white"
                 >
                   {item.label}
                 </Link>
@@ -97,7 +99,7 @@ function Navbar({ theme, setTheme }) {
               <Link
                 to="/contact"
                 onClick={() => setMenuOpen(false)}
-                className="inline-flex items-center gap-2 rounded-2xl px-1 py-2 text-sm font-medium text-slate-700 dark:text-slate-200"
+                className="inline-flex items-center gap-2 rounded-2xl px-1 py-2 text-sm font-medium text-slate-200 transition hover:text-white"
               >
                 <UserRound size={16} />
                 Login

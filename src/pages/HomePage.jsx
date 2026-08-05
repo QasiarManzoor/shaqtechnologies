@@ -6,10 +6,10 @@ import Services from '../components/Services';
 
 const homeSchema = {
   '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'ShaQ Technologies',
-  url: 'https://www.shaqtechnologies.com/', logo: 'https://www.shaqtechnologies.com/shaq-logo.png',
+  url: 'https://www.shaqtechnologies.com/', logo: 'https://www.shaqtechnologies.com/shaq-logo-web-safe-transparent.png',
   email: 'contact@shaqtechnologies.com', telephone: '+923028913283',
   contactPoint: { '@type': 'ContactPoint', telephone: '+923028913283', contactType: 'customer service', availableLanguage: ['English'] },
-  sameAs: ['https://www.linkedin.com/company/shaqtechnologies', 'https://www.facebook.com/ShaQTechnologies', 'https://www.instagram.com/shaqtechnologies/', 'https://www.linkedin.com/company/shaq-technologies/', 'https://x.com/ShaQ_Tech'],
+  sameAs: ['https://www.linkedin.com/company/shaqtechnologies', 'https://www.facebook.com/ShaQTechnologies', 'https://www.instagram.com/shaqtechnologies/', 'https://x.com/ShaQ_Tech'],
 };
 
 function HomePage() {
