@@ -15,6 +15,11 @@ npm run dev
 npm run build
 ```
 
+The build automatically regenerates `public/sitemap.xml` from the public routes in
+`src/App.jsx` and the service slugs in `src/data/services.js`. The `/not-found`
+and wildcard routes are excluded. You can also regenerate it manually with
+`npm run generate:sitemap`.
+
 ## Deploy on Cloudflare via GitHub
 
 This project can be deployed in two ways:
